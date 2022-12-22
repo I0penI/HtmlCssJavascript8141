@@ -1,0 +1,67 @@
+﻿body {
+    background-color:dimgray;
+}
+
+.mylabel{
+    color:cornsilk;
+}
+
+/* Flaired edges, by Tomas Theunissen */
+
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: cornsilk;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+    hr.style-seven:before { /* Not really supposed to work, but does */
+        display: block;
+        content: "";
+        height: 30px;
+        margin-top: -31px;
+        border-style: solid;
+        border-color: cornsilk;
+        border-width: 0 0 1px 0;
+        border-radius: 20px;
+    }
+    .myinput{
+        width:99%;
+        border-radius: 7px;
+        
+    }
+    #mydiv {
+        background-image:url(./resimler/bear.jpg);
+        height:679px; 
+        background-repeat :no-repeat;
+        background-position: center;
+        /*padding-right : 30px;*/
+        padding-top : 30px;
+        border-width : 1px;
+        border-style : solid;
+        border-color : goldenrod;
+        text-align : center;
+    }
+
+    #mydiv span{
+        font-size:20px;
+        font-weight:bold;
+        color: #043b2d;
+    }
+.bear:link {
+    text-decoration: none;
+    color: #23393c;
+    font-family: 'Comic Sans MS';
+    font-size: 18px;
+    
+}
+    .bear:hover {
+        cursor: crosshair;
+        text-decoration: underline;
+        color: #ff0000 !important;
+    }
+    .bear:visited {
+        color: #043b2d;
+    }
