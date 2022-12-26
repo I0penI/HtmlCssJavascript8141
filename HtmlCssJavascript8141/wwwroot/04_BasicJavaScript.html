@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Basic Javascript</title>
+    <script type="text/javascript">
+        var isim = "Ali Arslan";
+        alert(isim);
+        console.log(isim);
+
+        topla(11, 8);
+        var n1 = 2, n2 = 5;
+        var carpim = carp(n1, n2);
+        console.log("Çarpım: " + carpim);
+
+        function topla(no1, no2) {
+            console.log("Toplam: " + (no1 + no2));
+        }
+
+        function carp(no1, no2) {
+            return no1 * no2;
+        }
+
+    </script>
+    <script>
+        function buyukSayiyiBul() {
+            var tbSayi1 = document.getElementById("tbSayi1");
+            var tbSayi1Value = parseInt(tbSayi1.value);
+            //console.log(tbSayi1Value);
+            var tbSayi2Value = parseInt(document.getElementsByClassName("tbSayi2")[0].value);
+            //console.log(tbSayi2Value);
+            var sonuc = null;
+            if (tbSayi1Value > tbSayi2Value) {
+                sonuc = tbSayi1Value;
+
+            }
+            else if (tbSayi2Value > tbSayi1Value) {
+                sonuc = tbSayi2Value;
+            }
+            var pSonuc = document.getElementsByTagName("p")[0];
+            pSonuc.innerText = sonuc == null ? "Sayılar Eşit. " : "Büyük Sayı: " + sonuc;
+            
+        }
+    </script>
+</head>
+<body>
+    <label><i>Sayı 1:</i></label>
+    &nbsp;&nbsp;&nbsp;
+    <input type="text" id="tbSayi1" />
+    <br />
+    <span><i>Sayı 2:</i></span>
+    &nbsp;&nbsp;&nbsp;
+    <input type="text" class="tbSayi2" />
+    <br />
+    <button onclick="buyukSayiyiBul();">Büyük Sayıyı Bul</button>
+    <br />
+    <p style="font-family:'Comic Sans MS'; color:coral;font-weight:bold;">Lütfen Sayı Giriniz</p>
+</body>
+</html>
