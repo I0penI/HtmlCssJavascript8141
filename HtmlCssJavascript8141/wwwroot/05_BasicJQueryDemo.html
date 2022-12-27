@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Basic JQuery Demo</title>
+</head>
+<body>
+    <div style="text-align : center;">
+        <input type="text" id="ad" />
+        <br />
+        <select class="okul">
+            <option value="">Seçiniz</option>
+            <option value="1">Bilkent</option>
+            <option value="2">Çankaya</option>
+            <option value="3">ODTÜ</option>
+        </select>
+        <br />
+        <input type="checkbox" id="mezun" />&nbsp;Mezun
+        <br />
+        <input type="radio" name="cinsiyet" value=" Kadın" /> Kadın
+        <br />
+        <input type="radio" name="cinsiyet" value=" Erkek" /> Erkek
+        <br />
+        <select multiple class="dersler">
+            <option value="1">Matematik</option>
+            <option value="2">Coğrefya</option>
+            <option value="3" selected>Müzik</option>
+        </select>
+        <hr />
+        <button id="yazdir">Öğrenci Yazdır</button>
+        <h3 id="sonuc"></h3>
+        <span>Öğrenci Başarıyla Kaydedildi</span>
+    </div>
+
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        // $(document).ready(function(){ }) 1. yol
+        $(function(){
+           // alert("Herkese İyi Yıllar!");
+
+            $("span").hide();
+
+            $("#yazdir").click(function () {
+                $("#sonuc").css("color", "black");
+                $("#sonuc").text("");
+                var sonuc ="";
+
+                var ad = $("#ad").val();
+                sonuc += "Adı: " + ad +"<br />";
+
+                var okul = $(".okul").val();
+
+                if (okul == "") {
+                    $("#sonuc").text("Okul seçilmelidir!");
+                    $("#sonuc").css("color", "red");
+                    
+                    return;
+                }
+                sonuc += "Okul: " + okul + "<br />";
+
+                var mezun = $("#mezun").prop("checked");
+                sonuc += "Durumu: " + (mezun ? " Mezun" : " Okuyor") + "<br />";
+
+                var cinsiyet = $("input[name = cinsiyet]:checked").val();
+                sonuc += "Cinsiyet: " + cinsiyet + "<br />";
+
+                sonuc += "Dersler: ";
+                //var dersler = $(".dersler").val();
+                //var i = 0;
+                //while (i < dersler.lenght) {
+                //    sonuc += dersler[i] + ", ";
+                //    i++;
+
+                //}
+
+                var tanimliDersler = ["Matematik", "Coğrafya", "Müzik"];
+                var dersler = $(".dersler").val();
+                for (var i = 0; i < dersler.length; i++)
+                {
+                    sonuc += tanimliDersler[dersler[i] - 1] + ", ";
+                }
+                sonuc = sonuc.substr(0, sonuc.length - 2);
+
+
+
+                $("#sonuc").html(sonuc);
+                //$("span").show(1000);
+                //$("span").show("fast");
+                //$("span").show("slow");
+                $("span").show();
+                $("span").css("color", "darkblue");
+            });
+        });
+    </script>
+</body>
+</html>

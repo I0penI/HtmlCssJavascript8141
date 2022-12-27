@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Basic jQuery</title>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+            var sehir = $("#sehir").val();
+            $(".sehirGosterim").text(sehir);
+        });
+    </script>
+
+</head>
+<body>
+    <input type="text" id="sehir" value="Ankara" />
+    <!--<script>
+        var textBox = document.getElementById("sehir");
+        console.log(textBox.value);
+    </script>-->
+    <label class="sehirGosterim"></label>
+</body>
+</html>

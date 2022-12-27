@@ -42,6 +42,30 @@
             
         }
     </script>
+    <script>
+        if (1 == 1)
+            console.log("Eşit 1")
+        if (1 == "1")
+            console.log("Eşit 2")
+        if (1 === "1")
+            console.log("Eşit 3");
+        if (2 !== 3)
+            console.log("Eşit değil 1");
+        if (2 != "3")
+            console.log("Eşit değil 2");
+
+
+        console.log(degisken1); // undefined
+        var degisken1 = "Değişken 1";
+        console.log(degisken1);
+
+        console.log(degisken2); // hata fırlatır
+        let degisken1 = "Değişken 2";
+        console.log(degisken2);
+
+        var tarih = new Date("2022-12-27T10:30:00");
+        console.log(tarih.toLocaleString("tr-TR")); // en-US
+    </script>
 </head>
 <body>
     <label><i>Sayı 1:</i></label>
